@@ -124,8 +124,8 @@ public class TestInputOutputStream {
 	// 从硬盘读取一个文件并写入到另一个文件
 	@Test
 	public void testFileInputOutputStream() {
-//		File file1 = new File("hello.txt");
-//		File file2 = new File("hello4.txt");
+		// File file1 = new File("hello.txt");
+		// File file2 = new File("hello4.txt");
 		File file1 = new File("D:\\background.jpg");
 		File file2 = new File("D:\\bgirl.jpg");
 
@@ -162,5 +162,51 @@ public class TestInputOutputStream {
 			}
 
 		}
+	}
+
+	public static void copyFile(String source, String dest) {
+		File file1 = new File(source);
+		File file2 = new File(dest);
+		// 流
+		FileInputStream fis = null;
+		FileOutputStream fos = null;
+
+		try {
+			fis = new FileInputStream(file1);
+			fos = new FileOutputStream(file2);
+			// 复制
+			byte[] b = new byte[100];
+			int len;
+			while ((len = fis.read(b)) != -1) {
+				fos.write(b, 0, len);
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		} finally {
+			if (fos != null) {
+				try {
+					fos.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+			if (fis != null) {
+				try {
+					fis.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+
+		}
+	}
+
+	public static void main(String[] args) {
+		String source = "D:\\app\\testfile1\\apache-maven-3.3.9-bin.zip";   
+		String dest = "D:\\app\\testfile1\\new.zip";
+		long start = System.currentTimeMillis();
+		TestInputOutputStream.copyFile(source, dest);
+		long end = System.currentTimeMillis();
+		System.out.println(end - start);  //337
 	}
 }
