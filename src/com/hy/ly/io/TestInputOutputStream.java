@@ -15,17 +15,17 @@ import org.junit.Test;
 
 public class TestInputOutputStream {
 
-	// ´ÓÓ²ÅÌÖÐ¶ÁÈ¡Ò»¸öÎÄ¼þ,Òª¶ÁÈ¡µÄÎÄ¼þÒ»¶¨Òª´æÔÚ
+	// ï¿½ï¿½Ó²ï¿½ï¿½ï¿½Ð¶ï¿½È¡Ò»ï¿½ï¿½ï¿½Ä¼ï¿½,Òªï¿½ï¿½È¡ï¿½ï¿½ï¿½Ä¼ï¿½Ò»ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½
 	@Test
 	public void testFileInputStream() throws IOException {
-		// 1. ´´½¨File¶ÔÏó
+		// 1. ï¿½ï¿½ï¿½ï¿½Fileï¿½ï¿½ï¿½ï¿½
 		File file = new File("hello.txt");
 
-		// 2. ´´½¨Ò»¸öFileInputStreamÀàµÄ¶ÔÏó
+		// 2. ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½FileInputStreamï¿½ï¿½Ä¶ï¿½ï¿½ï¿½
 		FileInputStream fis = new FileInputStream(file);
 
-		// 3. µ÷ÓÃµÄFileInputStream·½·¨£¬ÊµÏÖfileÎÄ¼þµÄ¶ÁÈ¡
-		// read()´Ó´ËÊäÈëÁ÷ÖÐ¶ÁÈ¡Ò»¸öÊý¾Ý×Ö½Ú,Èç¹ûÒÑµ½´ïÎÄ¼þÄ©Î²£¬Ôò·µ»Ø -1¡£
+		// 3. ï¿½ï¿½ï¿½Ãµï¿½FileInputStreamï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½fileï¿½Ä¼ï¿½ï¿½Ä¶ï¿½È¡
+		// read()ï¿½Ó´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½È¡Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö½ï¿½,ï¿½ï¿½ï¿½ï¿½Ñµï¿½ï¿½ï¿½ï¿½Ä¼ï¿½Ä©Î²ï¿½ï¿½ï¿½ò·µ»ï¿½ -1ï¿½ï¿½
 		/*
 		 * int b=fis.read(); while(b!=-1){ System.out.print((char)b);
 		 * b=fis.read(); }
@@ -36,22 +36,22 @@ public class TestInputOutputStream {
 			System.out.print((char) b);
 		}
 
-		// 4.¹Ø±ÕÏàÓ¦µÄÁ÷
+		// 4.ï¿½Ø±ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½
 		fis.close();
 
 	}
 
 	@Test
 	public void testFileInputStream2() {
-		// 2. ´´½¨Ò»¸öFileInputStreamÀàµÄ¶ÔÏó
+		// 2. ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½FileInputStreamï¿½ï¿½Ä¶ï¿½ï¿½ï¿½
 		FileInputStream fis = null;
 		try {
-			// 1. ´´½¨File¶ÔÏó
+			// 1. ï¿½ï¿½ï¿½ï¿½Fileï¿½ï¿½ï¿½ï¿½
 			File file = new File("hello.txt");
 
 			fis = new FileInputStream(file);
 
-			// 3. µ÷ÓÃµÄFileInputStream·½·¨£¬ÊµÏÖfileÎÄ¼þµÄ¶ÁÈ¡
+			// 3. ï¿½ï¿½ï¿½Ãµï¿½FileInputStreamï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½fileï¿½Ä¼ï¿½ï¿½Ä¶ï¿½È¡
 			int b;
 			while ((b = fis.read()) != -1) {
 				System.out.print((char) b);
@@ -59,7 +59,7 @@ public class TestInputOutputStream {
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {
-			// 4.¹Ø±ÕÏàÓ¦µÄÁ÷
+			// 4.ï¿½Ø±ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½
 			try {
 				fis.close();
 			} catch (IOException e) {
@@ -73,8 +73,8 @@ public class TestInputOutputStream {
 	public void testFileInputStream3() throws IOException {
 		File file = new File("hello.txt");
 		FileInputStream fis = new FileInputStream(file);
-		byte[] b = new byte[10]; // Òª¶ÁÈ¡µ½µÄÊý¾ÝÒªÐ´ÈëµÄÊý×é
-		int len = -1; // Ã¿´Î¶ÁÈëµ½byteÖÐµÄ×Ö½ÚµÄ³¤¶È
+		byte[] b = new byte[10]; // Òªï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÒªÐ´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		int len = -1; // Ã¿ï¿½Î¶ï¿½ï¿½ëµ½byteï¿½Ðµï¿½ï¿½Ö½ÚµÄ³ï¿½ï¿½ï¿½
 		while ((len = fis.read(b)) != -1) {
 			for (int i = 0; i < len; i++) {
 				System.out.print((char) b[i]);
@@ -88,8 +88,8 @@ public class TestInputOutputStream {
 	public void testFileInputStream4() throws IOException {
 		File file = new File("hello.txt");
 		FileInputStream fis = new FileInputStream(file);
-		byte[] b = new byte[10]; // Òª¶ÁÈ¡µ½µÄÊý¾ÝÒªÐ´ÈëµÄÊý×é
-		int len = -1; // Ã¿´Î¶ÁÈëµ½byteÖÐµÄ×Ö½ÚµÄ³¤¶È
+		byte[] b = new byte[10]; // Òªï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÒªÐ´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		int len = -1; // Ã¿ï¿½Î¶ï¿½ï¿½ëµ½byteï¿½Ðµï¿½ï¿½Ö½ÚµÄ³ï¿½ï¿½ï¿½
 		while ((len = fis.read(b)) != -1) {
 			String str = new String(b, 0, len);
 			System.out.print(str);
@@ -97,7 +97,7 @@ public class TestInputOutputStream {
 		fis.close();
 	}
 
-	// Ð´ÈëÎÄ¼þ
+	// Ð´ï¿½ï¿½ï¿½Ä¼ï¿½
 	@Test
 	public void testFileOutputStream() {
 
@@ -121,7 +121,7 @@ public class TestInputOutputStream {
 
 	}
 
-	// ´ÓÓ²ÅÌ¶ÁÈ¡Ò»¸öÎÄ¼þ²¢Ð´Èëµ½ÁíÒ»¸öÎÄ¼þ
+	// ï¿½ï¿½Ó²ï¿½Ì¶ï¿½È¡Ò»ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½Ð´ï¿½ëµ½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Ä¼ï¿½
 	@Test
 	public void testFileInputOutputStream() {
 		// File file1 = new File("hello.txt");
@@ -129,7 +129,7 @@ public class TestInputOutputStream {
 		File file1 = new File("D:\\background.jpg");
 		File file2 = new File("D:\\bgirl.jpg");
 
-		// Á÷
+		// ï¿½ï¿½
 		FileInputStream fis = null;
 		FileOutputStream fos = null;
 
@@ -137,7 +137,7 @@ public class TestInputOutputStream {
 			fis = new FileInputStream(file1);
 			fos = new FileOutputStream(file2);
 
-			// ¸´ÖÆ
+			// ï¿½ï¿½ï¿½ï¿½
 			byte[] b = new byte[100];
 			int len;
 			while ((len = fis.read(b)) != -1) {
@@ -167,15 +167,15 @@ public class TestInputOutputStream {
 	public static void copyFile(String source, String dest) {
 		File file1 = new File(source);
 		File file2 = new File(dest);
-		// Á÷
+		// ï¿½ï¿½
 		FileInputStream fis = null;
 		FileOutputStream fos = null;
 
 		try {
 			fis = new FileInputStream(file1);
 			fos = new FileOutputStream(file2);
-			// ¸´ÖÆ
-			byte[] b = new byte[100];
+			// ï¿½ï¿½ï¿½ï¿½
+			byte[] b = new byte[1024];
 			int len;
 			while ((len = fis.read(b)) != -1) {
 				fos.write(b, 0, len);
@@ -202,11 +202,14 @@ public class TestInputOutputStream {
 	}
 
 	public static void main(String[] args) {
-		String source = "D:\\app\\testfile1\\apache-maven-3.3.9-bin.zip";   
-		String dest = "D:\\app\\testfile1\\new.zip";
+		String source = "D:\\tmp\\runuiautomator.jar";   
+		String dest = "D:\\tmp\\1.jar";
 		long start = System.currentTimeMillis();
 		TestInputOutputStream.copyFile(source, dest);
 		long end = System.currentTimeMillis();
-		System.out.println(end - start);  //337
+		System.out.println(end - start);  //173
 	}
+	
+	
+	
 }
