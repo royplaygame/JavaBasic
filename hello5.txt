@@ -1,0 +1,4 @@
+this haha is hello txt file for IO test
+123456
+aaaaaa
+ffffff
