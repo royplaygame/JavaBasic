@@ -1,12 +1,13 @@
 package com.hy.ly.thread;
 
+//线程1输出1～100的奇数，线程2输出1～100的偶数
 public class TestSubThread {
 
 	public static void main(String[] args) {
 		SubThread1 st1 = new SubThread1();
 		SubThread2 st2 = new SubThread2();
-		//st1.start();
-		//st2.start();
+		st1.start();
+		st2.start();
 
 		// 继承Thread的类和匿名类对象
 		new Thread() {
