@@ -26,6 +26,7 @@ class Account {
 	}
 
 	public synchronized void deposit(double amt) {
+		notify();
 		balance += amt;
 		try {
 			Thread.currentThread().sleep(10);
@@ -33,6 +34,11 @@ class Account {
 			e.printStackTrace();
 		}
 		System.out.println(Thread.currentThread().getName() + "的当前的余额是：" + balance);
+		try {
+			wait();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 	}
 }
 
