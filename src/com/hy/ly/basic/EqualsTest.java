@@ -1,5 +1,6 @@
 package com.hy.ly.basic;
 
+import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.List;
 
@@ -37,5 +38,6 @@ public class EqualsTest {
 		for(String s:list){
 			System.out.println(s);
 		}
+		
 	}
 }

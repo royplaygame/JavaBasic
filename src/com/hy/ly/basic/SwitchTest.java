@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 import org.junit.Test;
 
+import com.hy.ly.po.Season;
+
 public class SwitchTest {
 
 	public static void main(String[] args) {
@@ -42,7 +44,7 @@ public class SwitchTest {
 
 	@Test
 	public void testFunction() {
-		String str="7";
+		String str = "7";
 		switch (str) {
 		case "1":
 			System.out.println("星期一");
@@ -67,6 +69,27 @@ public class SwitchTest {
 			break;
 		default:
 			System.out.println("输入错误");
+		}
+	}
+
+	@Test
+	public void testSwitch() {
+		int num = 11;
+		switch (num) {
+		case 1:
+			System.out.println(Season.SPRING);
+			break;
+		case 2:
+			System.out.println(Season.SUMMER);
+			break;
+		case 3:
+			System.out.println(Season.AUTUMN);
+			break;
+		case 4:
+			System.out.println(Season.WINTER);
+			break;
+		default:
+			System.out.println("输入有误！");
 		}
 	}
 }
