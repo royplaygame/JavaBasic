@@ -8,6 +8,7 @@ public class TestDeadLock {
 
 	public static void main(String[] args) {
 		new Thread() {
+			@SuppressWarnings("static-access")
 			public void run() {
 				synchronized (sb1) {
 					try {
@@ -26,6 +27,7 @@ public class TestDeadLock {
 		}.start();
 
 		new Thread() {
+			@SuppressWarnings("static-access")
 			public void run() {
 				synchronized (sb2) {
 					try {

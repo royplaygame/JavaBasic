@@ -26,6 +26,7 @@ class Producer implements Runnable { // 生产者
 		this.clerk = clerk;
 	}
 
+	@SuppressWarnings("static-access")
 	@Override
 	public void run() {
 		System.out.println("生产者开始生产产品");
@@ -51,6 +52,7 @@ class Consumer implements Runnable { // 消费者
 		this.clerk = clerk;
 	}
 
+	@SuppressWarnings("static-access")
 	@Override
 	public void run() {
 		System.out.println("消费者开始消费产品");

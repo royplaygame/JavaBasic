@@ -18,6 +18,7 @@ public class TestWindow3 {
 class Window3 extends Thread {
 	static int ticket = 100;
 	static Object obj=new Object();
+	@SuppressWarnings("static-access")
 	public void run() {
 		while (true) {
 			synchronized (obj) {

@@ -25,6 +25,7 @@ class Account {
 
 	}
 
+	@SuppressWarnings("static-access")
 	public synchronized void deposit(double amt) {
 		notify();
 		balance += amt;

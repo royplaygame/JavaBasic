@@ -34,6 +34,7 @@ class Window4 implements Runnable {
 		}
 	}
 
+	@SuppressWarnings("static-access")
 	public synchronized void show() {
 		if (ticket > 0) {
 			try {

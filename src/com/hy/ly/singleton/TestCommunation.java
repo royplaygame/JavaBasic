@@ -18,6 +18,7 @@ public class TestCommunation {
 class PrintNumber implements Runnable {
 	int num = 1;
 
+	@SuppressWarnings("static-access")
 	@Override
 	public void run() {
 		while (true) {

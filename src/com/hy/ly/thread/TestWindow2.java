@@ -27,6 +27,7 @@ class Window2 implements Runnable {
 	int ticket = 100;
 	// Object obj = new Object();
 
+	@SuppressWarnings("static-access")
 	@Override
 	public void run() {
 		while (true) {

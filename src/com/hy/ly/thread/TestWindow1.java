@@ -16,6 +16,7 @@ public class TestWindow1 {
 class Window1 implements Runnable {
 	int ticket = 100;
 
+	@SuppressWarnings("static-access")
 	@Override
 	public void run() {
 		while (true) {
