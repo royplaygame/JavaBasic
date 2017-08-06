@@ -8,6 +8,7 @@ import java.util.Set;
 
 public class MapTest {
 
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public static void main(String[] args) {
 		Map map=new HashMap();
 		map.put("name", "平凡的世界");

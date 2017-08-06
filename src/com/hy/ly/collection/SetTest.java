@@ -8,6 +8,7 @@ import java.util.TreeSet;
 
 public class SetTest {
 
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public static void main(String[] args) {
 		Set set = new HashSet();
 		set.add("good");
