@@ -4,6 +4,11 @@ import java.util.Objects;
 
 public class Student {
 
+	@Override
+	public String toString() {
+		return "Student [id=" + id + ", name=" + name + ", sex=" + sex + ", phone=" + phone + "]";
+	}
+
 	private Integer id;
 	private String name;
 	private String sex;

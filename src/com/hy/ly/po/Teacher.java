@@ -2,9 +2,11 @@ package com.hy.ly.po;
 
 import java.util.Objects;
 
-public class Teacher {
+@SuppressWarnings("rawtypes")
+public class Teacher implements Comparable {
+
 	private String name;
-	private int age;
+	private Integer age;
 
 	public String getName() {
 		return name;
@@ -27,7 +29,7 @@ public class Teacher {
 		return "Teacher [name=" + name + ", age=" + age + "]";
 	}
 
-	public Teacher(String name, int age) {
+	public Teacher(String name, Integer age) {
 		super();
 		this.name = name;
 		this.age = age;
@@ -35,6 +37,15 @@ public class Teacher {
 
 	public Teacher() {
 		super();
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31; // 质数
+		int result = 1;
+		result = prime * result + (name == null ? 0 : name.hashCode());
+		result = prime * result + (age == null ? 0 : age.hashCode());
+		return result;
 	}
 
 	@Override
@@ -55,8 +66,25 @@ public class Teacher {
 
 		// 类型相同, 比较内容是否相同
 		Teacher tea = (Teacher) obj;
-
 		return Objects.equals(name, tea.name) && age == tea.age;
+	}
+
+	// 当向TreeSet中添加Teacher类的对象时,依据此方法，来确定按照属性排列
+	@Override
+	public int compareTo(Object o) {
+		if (o instanceof Teacher) {
+			Teacher t = (Teacher) o;
+			// 如果age是int类型时，可以用-来做: return this.age-t.age;
+			// 如果要倒序排，可以在返回值前面加个负号（-）
+			// return this.age.compareTo(t.age);
+			int i = this.age.compareTo(t.age);
+			if (i == 0) {
+				return this.name.compareTo(t.name);
+			} else {
+				return i;
+			}
+		}
+		return 0;
 	}
 
 }
