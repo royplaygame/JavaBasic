@@ -2,8 +2,11 @@ package com.hy.ly.array;
 
 import java.util.Arrays;
 
+import org.junit.Test;
+
 public class TestArray {
 
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		//byte short int long 默认值0
 		int []nums=new int[3];
@@ -42,5 +45,24 @@ public class TestArray {
 		int find1=Arrays.binarySearch(num3, 28);
 		System.out.println(find);
 		System.out.println(find1);
+	}
+	
+	@Test
+	public void testArrays(){
+		String[] stringArray = new String[3]; // 各元素的值默认为null
+		for (int i = 0; i < stringArray.length; i++) { // 对各元素进行初始化，但没有赋值。
+			stringArray[i] = new String();
+			System.out.println(stringArray[i]);
+		}
+	}
+	
+	@Test
+	public void testArray(){
+		String foo="blue"; 
+		boolean[] bar=new boolean[2]; 
+		if(bar[0]){   
+      			foo="green"; 
+   		} 
+		System.out.println(foo);
 	}
 }
