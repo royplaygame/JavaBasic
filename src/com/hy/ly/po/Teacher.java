@@ -3,10 +3,14 @@ package com.hy.ly.po;
 import java.util.Objects;
 
 @SuppressWarnings("rawtypes")
-public class Teacher implements Comparable {
+@MyAnnotation(value = "luoyang")
+public class Teacher extends Creature<String> implements Comparable, MyInterface {
 
-	private String name;
+	private static final long serialVersionUID = -7940922469680343056L;
+	public String name;
 	private Integer age;
+	int id;
+	protected int total;
 
 	public String getName() {
 		return name;
@@ -24,6 +28,24 @@ public class Teacher implements Comparable {
 		this.age = age;
 	}
 
+	@MyAnnotation(value = "mymethod123")
+	public void show() {
+		System.out.println("我是一个教师！");
+	}
+	
+	@SuppressWarnings("unused")
+	private void showInfo() {
+		System.out.println("我是一个教师！");
+	}
+	
+	public static void info(){
+		System.out.println("我是一个中国人！");
+	}
+
+	public void display(String nation) throws Exception{
+		System.out.println("我的国籍是：" + nation);
+	}
+
 	@Override
 	public String toString() {
 		return "Teacher [name=" + name + ", age=" + age + "]";
@@ -34,9 +56,17 @@ public class Teacher implements Comparable {
 		this.name = name;
 		this.age = age;
 	}
+	@SuppressWarnings("unused")
+	private Teacher(String name, Integer age,int total) {
+		super();
+		this.name = name;
+		this.age = age;
+		this.total=total;
+	}
 
 	public Teacher() {
 		super();
+		System.out.println("初始化Teacher类对象");
 	}
 
 	@Override
@@ -87,4 +117,7 @@ public class Teacher implements Comparable {
 		return 0;
 	}
 
+	class bird {
+
+	}
 }
