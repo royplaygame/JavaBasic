@@ -13,15 +13,14 @@ public class TestOthers {
 	@Test
 	public void test(){
 
-
-
 	}
 	
 	// 获取内部类
-	@SuppressWarnings("rawtypes")
+	@SuppressWarnings({ "rawtypes", "unused" })
 	@Test
-	public void testInnerClass() {
-		//Class clazz = Teacher.class;
+	public void testInnerClass() throws ClassNotFoundException {
+		Class clazz = Teacher.class;
+		Class.forName("com.hy.ly.reflection.TestOthers");
 		
 	}
 
