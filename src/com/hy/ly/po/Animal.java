@@ -5,6 +5,7 @@ public class Animal {
 	private String name;
 	private int age;
 	private final String color="red";
+	String type;
 	
 	public String getColor() {
 		return color;

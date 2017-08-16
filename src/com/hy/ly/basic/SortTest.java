@@ -17,6 +17,7 @@ public class SortTest {
 			System.out.print(as[i] + " ");
 		}
 		System.out.println();
+		// 冒泡排序
 		for (int i = 0; i < as.length - 1; i++) {
 			for (int j = 0; j < as.length - 1 - i; j++) {
 				if (as[j] > as[j + 1]) {
@@ -44,7 +45,7 @@ public class SortTest {
 		}
 
 		System.out.println();
-
+		// 选择排序
 		int size = as.length;
 		for (int i = 0; i < size; i++) {
 			int k = i;
@@ -92,5 +93,10 @@ public class SortTest {
 		for (int i = 0; i < as.length; i++) {
 			System.out.print(as[i] + " ");
 		}
+	}
+
+	@Test
+	public void testGet() {
+		System.out.println(this.getClass().getName());
 	}
 }

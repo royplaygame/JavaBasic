@@ -11,4 +11,8 @@ public class Cat extends Animal{
 		System.out.println(c);
 		//c=new Cat();
 	}
+	public void showInfo(){
+		type="";
+	}
+	
 }
