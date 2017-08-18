@@ -7,6 +7,7 @@ import java.util.List;
 
 public class Tools {
 
+	@SuppressWarnings("unused")
 	private int total;
 	private String name;
 	private static String hobby="乒乓";

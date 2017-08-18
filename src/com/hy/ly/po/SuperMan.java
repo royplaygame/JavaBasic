@@ -14,6 +14,7 @@ public class SuperMan {
 		count++;
 	}
 
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		System.out.println(SuperMan.total);
 		SuperMan sup = new SuperMan();

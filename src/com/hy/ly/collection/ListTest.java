@@ -7,6 +7,8 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.junit.Test;
+
 import com.hy.ly.po.Teacher;
 
 public class ListTest {
@@ -53,6 +55,82 @@ public class ListTest {
 		for(int i=0;i<linkedList.size();i++){
 			System.out.println(linkedList.get(i));
 		}
+		
+	}
+	
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	@Test
+	public void ArrayListOperation(){
+		ArrayList list=new ArrayList();
+		list.add("kafei");
+		list.add("book");
+		list.add("apple");
+		list.add("orange");
+		list.add(3, "平凡的世界");
+		System.out.println(list.toString());
+		System.out.println(list.get(2));
+		System.out.println(list.indexOf("平凡的世界"));
+		list.set(1, "monkey");
+		System.out.println(list.toString());
+		Object obj=list.remove(1);
+		System.out.println(list.toString());
+		System.out.println(obj);
+		System.out.println(list.isEmpty());
+		System.out.println(list.contains("apple"));
+		
+	}
+	//SuppressWarnings压制警告，即去除警告 
+	//rawtypes是说传参时也要传递带泛型的参数
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	@Test
+	public void LinkedListOperation(){
+		LinkedList list=new LinkedList();
+		list.add("kafei");
+		list.add("book");
+		list.add("apple");
+		list.add("orange");
+		list.add(3, "平凡的世界");
+		list.addFirst("First");
+		list.addLast("Last");
+		System.out.println(list.toString());
+		System.out.println(list.getFirst());
+		System.out.println(list.getLast());
+		list.removeLast();
+		System.out.println(list.toString());
+		list.removeFirst();
+		System.out.println(list.toString());
+		System.out.println(list.contains("book"));
+		list.clear();
+		System.out.println(list.toString());
+		list.offerLast("thisLast");
+		list.offerFirst("thisFirst");
+		System.out.println(list.toString());
+		String peek=(String) list.peek();
+		System.out.println(peek);
+		
+		//pop push
+		System.out.println("===================================");
+		LinkedList list2=new LinkedList();
+		list2.add("kafei");
+		list2.add("book");
+		list2.add("apple");
+		list2.add("orange");
+		list2.add(3, "平凡的世界");
+		list2.addFirst("First");
+		list2.addLast("Last");
+		System.out.println(list2.toString());
+		list2.push("push1");
+		list2.push("push2");
+		System.out.println(list2.toString());
+		list2.pop();
+		System.out.println(list2.toString());
+		
+		//set
+		list2.set(6, "Modifyto6");
+		System.out.println(list2.toString());
+		
+		
+		
 		
 	}
 }
