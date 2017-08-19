@@ -2,6 +2,8 @@ package com.hy.ly.io;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import org.junit.Test;
 
@@ -52,7 +54,7 @@ public class TestFile {
 		if (!filemd.exists()) {
 			filemd.mkdirs();
 		}
-		
+
 		System.out.println(file.lastModified());
 	}
 
@@ -66,5 +68,32 @@ public class TestFile {
 		for (int i = 0; i < file.listFiles().length; i++) {
 			System.out.println(file.listFiles()[i].getName());
 		}
+	}
+
+	@Test
+	public void test3() throws IOException {
+		File file = new File("D:\\tmp\\IO.txt");
+		if (!file.exists()) {
+			file.createNewFile();
+			System.out.println("File create Successfully!");
+		}
+		// 设置成只读
+		file.setReadOnly();
+		boolean flag = file.setReadable(false);
+		System.out.println(flag + "=====" + file.canRead());
+		// file.setWritable(true);
+
+		// 判断读写
+		boolean f = file.setWritable(true);
+		boolean r = file.setReadable(true);
+		System.out.println(f + "=======" + file.canWrite());
+		System.out.println(r + "========" + file.canRead());
+		
+		//输出修改时间
+		System.out.println(file.lastModified());
+		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		System.out.println(sdf.format(new Date(file.lastModified())));
+		file.setLastModified(150123123123L);
+		System.out.println(sdf.format(new Date(file.lastModified())));
 	}
 }
