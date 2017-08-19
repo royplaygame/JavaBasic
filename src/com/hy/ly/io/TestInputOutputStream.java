@@ -210,6 +210,47 @@ public class TestInputOutputStream {
 		System.out.println(end - start);  //173
 	}
 	
+	@Test
+	public void testInputStream() throws IOException{
+		FileInputStream fis=new FileInputStream(new File("hello.txt"));
+		fis.available();
+		int i=fis.read();
+		while(i!=-1){
+			System.out.print((char)i);
+			i=fis.read();
+		}
+		fis.close();
+	}
+	@Test
+	public void testInputStream2() throws IOException{
+		FileInputStream fis=new FileInputStream(new File("hello.txt"));
+		byte []b=new byte[1024];
+		int len;
+		while((len=fis.read(b))!=-1){
+			String str=new String(b,0,len);
+			System.out.println(str);
+		}
+		fis.close();
+	}
+	@Test
+	public void testInputStream3() throws IOException{
+		FileInputStream fis=new FileInputStream(new File("hello.txt"));
+		byte []b=new byte[5];
+		int len;
+		while((len=fis.read(b))!=-1){
+			for(int i=0;i<len;i++){
+				System.out.print((char)b[i]);
+			}
+		}
+		fis.close();
+	}
 	
+	@Test
+	public void testFileOutputStream1() throws IOException{
+		FileOutputStream fos=new FileOutputStream(new File("out.txt"));
+		String str="this is my new outputStream test";
+		fos.write(str.getBytes());
+		fos.close();
+	}
 	
 }

@@ -1,5 +1,7 @@
 package com.hy.ly.io;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -145,5 +147,74 @@ public class TestFileReaderWriter {
 		}
 
 		fr.close();
+	}
+
+	@Test
+	public void testFileReader2() throws IOException {
+		FileReader fr = new FileReader(new File("poney.txt"));
+		char[] ch = new char[1024];
+		int len;
+		while ((len = fr.read(ch)) != -1) {
+			String str = new String(ch, 0, len);
+			System.out.println(str);
+		}
+		fr.close();
+	}
+
+	@Test
+	public void testFileReader3() throws IOException {
+		FileReader fr = new FileReader(new File("poney.txt"));
+		char[] ch = new char[1024];
+		int len = fr.read(ch);
+		StringBuffer sb = new StringBuffer();
+		while (len != -1) {
+			sb.append(ch);
+			len = fr.read(ch);
+		}
+		System.out.println(sb.toString());
+		fr.close();
+	}
+
+	@Test
+	public void testFileWriter3() {
+		FileWriter fr = null;
+		try {
+			fr = new FileWriter(new File("out.txt"));
+			fr.write("这是我的相关信息，我要写入的文件中去了123456");
+			fr.flush();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				fr.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+
+	}
+
+	@Test
+	public void testBufferedReader() throws IOException {
+		FileReader fr = new FileReader(new File("poney.txt"));
+		BufferedReader br = new BufferedReader(fr);
+		String str = br.readLine();
+		while (str != null) {
+			System.out.println(str);
+			str = br.readLine();
+		}
+		br.close();
+		fr.close();
+	}
+
+	@Test
+	public void testBufferedWriter() throws IOException {
+		FileWriter fw = new FileWriter(new File("out.txt"));
+		BufferedWriter bw = new BufferedWriter(fw);
+		bw.write("牡丹（学名：Paeonia suffruticosa Andr.）是毛茛科、芍药属植物，为多年生落叶灌木");
+		bw.write("牡丹（学名：Paeonia suffruticosa Andr.）是毛茛科、芍药属植物，为多年生落叶灌木");
+		bw.flush();
+		bw.close();
+		fw.close();
 	}
 }
