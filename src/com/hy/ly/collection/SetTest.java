@@ -9,6 +9,7 @@ import java.util.TreeSet;
 
 import org.junit.Test;
 
+import com.hy.ly.po.Music;
 import com.hy.ly.po.Student;
 import com.hy.ly.po.Teacher;
 
@@ -247,5 +248,46 @@ public class SetTest {
 		for (Object obj : set) {
 			System.out.println(obj);
 		}
+	}
+
+	@Test
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	public void testHashSet() {
+		HashSet set = new HashSet();
+		set.add(null);
+		set.add("book");
+		set.add("look");
+		set.add("good");
+		set.add("good");
+		set.add("Hello");
+		// 迭代器
+		Iterator it = set.iterator();
+		while (it.hasNext()) {
+			System.out.println(it.next());
+		}
+		// 存储对象
+		Music m1 = new Music("好久不见",4,"陈奕迅");
+		Music m2 = new Music("水手",4,"郑智化");
+		Music m3 = new Music("大海",4,"张雨生");
+		Music m4 = new Music("大海",4,"张雨生");
+		HashSet hSet = new HashSet();
+		hSet.add(m1);
+		hSet.add(m2);
+		hSet.add(m3);
+		hSet.add(m4);
+		System.out.println(m3.hashCode()+"==="+m4.hashCode());
+		System.out.println(m3.equals(m4));
+		Iterator it2=hSet.iterator();
+		while(it2.hasNext()){
+			System.out.println(it2.next());
+		}
+		
+		//比较两个对象大小
+		Music obj1 = new Music("大海",4,"张雨生");
+		Music obj2 = new Music("大海",4,"张雨生");
+		Music obj3 = new Music("水手",4,"郑智化");
+		System.out.println(obj1.compareTo(obj2));
+		System.out.println(obj1.compareTo(obj3));
+		System.out.println("大海".compareTo("水手"));
 	}
 }

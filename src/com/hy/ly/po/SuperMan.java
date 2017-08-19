@@ -37,6 +37,7 @@ public class SuperMan {
 		System.out.println(SuperMan.name);*/
 	}
 
+	@SuppressWarnings("unused")
 	@Test
 	public void testSuper1() {
 		System.out.println(SuperMan.total);

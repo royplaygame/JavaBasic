@@ -9,6 +9,7 @@ public class Tools {
 
 	@SuppressWarnings("unused")
 	private int total;
+	@SuppressWarnings("unused")
 	private String name;
 	private static String hobby="乒乓";
 	int kk; 
@@ -35,6 +36,7 @@ public class Tools {
 		System.out.println("this is show method");
 	}
 
+	@SuppressWarnings({ "static-access", "unused", "rawtypes" })
 	public static void main(String[] args) {
 		Tools t=new Tools();
 		t.getInfo();

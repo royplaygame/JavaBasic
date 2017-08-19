@@ -23,6 +23,7 @@ public class ListTest {
 		list.add('d');
 		list.addAll(col);
 		
+		
 		Teacher te=new Teacher("王老师",25);
 		list.add(te);
 		boolean b=list.contains(new Teacher("王老师",25));
@@ -124,9 +125,16 @@ public class ListTest {
 		System.out.println(list2.toString());
 		list2.pop();
 		System.out.println(list2.toString());
-		
 		//set
 		list2.set(6, "Modifyto6");
+		System.out.println(list2.toString());
+		
+		//list size
+		System.out.println(list2.size());
+		System.out.println(list2.toString());
+		list2.add(null);
+		list2.add(null);
+		System.out.println(list2.size());
 		System.out.println(list2.toString());
 		
 		
