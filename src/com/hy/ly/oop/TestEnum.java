@@ -1,10 +1,15 @@
 package com.hy.ly.oop;
 
+import java.io.UnsupportedEncodingException;
+import java.nio.charset.Charset;
+import java.util.Locale;
+
 public class TestEnum {
 
 	private Gender sex;
-	public static void main(String[] args) {
-		//枚举switch
+
+	public static void main(String[] args) throws UnsupportedEncodingException {
+		// 枚举switch
 		Season season = Season.WINTER;
 		switch (season) {
 		case SPRING:
@@ -22,11 +27,16 @@ public class TestEnum {
 		default:
 			System.out.println("季节有误！请重新输入！");
 		}
-		
-		//枚举属性
-		TestEnum t=new TestEnum();
-		t.sex=Gender.Male;
+
+		// 枚举属性
+		TestEnum t = new TestEnum();
+		t.sex = Gender.Male;
 		System.out.println(t.sex);
+
+		/**
+		 * 
+		 */
+
 	}
 
 }
