@@ -192,4 +192,16 @@ public class MapTest {
 		System.out.println(properties.get("user"));
 		System.out.println(properties.get("driver"));
 	}
+	
+	@Test
+	public void testMap(){
+		HashMap<String,String> map = new HashMap<String,String>();
+		map.put("name", "平凡的世界");
+		map.put("price", "100");
+		map.put("publish", "清华大学出版社");
+		map.entrySet();
+		for(Map.Entry<String,String> entry: map.entrySet()){
+			System.out.println(entry.getKey()+" "+entry.getValue());
+		}
+	}
 }

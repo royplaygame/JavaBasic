@@ -91,6 +91,6 @@ public class Music implements Comparable{
 				return n;
 			}
 		}
-		return 0;
+		return -1;
 	}
 }

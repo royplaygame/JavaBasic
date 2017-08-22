@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-
 import org.junit.Test;
 
 /**
@@ -87,5 +86,78 @@ public class CollectionsTest {
 		Collections.replaceAll(list, 576, 888);
 		System.out.println(list);
 	}
+	
+	@Test
+	public void testCollection(){
+		List<Integer> list=new ArrayList<>();
+		list.add(123);
+		list.add(101);
+		list.add(991);
+		list.add(576);
+		list.add(991);
+		list.add(586);
+		list.add(576);
+		System.out.println(list);
+		Collections.sort(list);
+		System.out.println(list);
+		int index=Collections.binarySearch(list, 991);
+		System.out.println(index);
+		/*Collections.fill(list, 100);
+		System.out.println(list);
+		List<Integer> list1=Arrays.asList(new Integer[list.size()]);
+		Collections.copy(list1, list);
+		System.out.println(list1);*/
+		
+	}
 
+	@Test
+	public void testCollection5(){
+		List<Integer> list=new ArrayList<>();
+		list.add(123);
+		list.add(101);
+		list.add(991);
+		list.add(576);
+		list.add(991);
+		list.add(586);
+		list.add(576);
+		System.out.println(list);
+		Collections.addAll(list, 1000,300,500);
+		System.out.println(list);
+		Collections.addAll(list, new Integer[]{100,200,300});
+		System.out.println(list);
+		/*ArrayDeque<Integer> deque=new ArrayDeque<>();
+		deque.add(666);
+		deque.add(777);
+		deque.push(300);
+		deque.pop();
+		Queue<Integer> queue=Collections.asLifoQueue(deque);
+		System.out.println(queue);*/
+		List<String> list2=Collections.emptyList();
+		System.out.println(list2);
+		
+		System.out.println(Collections.emptyMap());
+		System.out.println(Collections.emptySet());
+		
+		//Collections.fill(list, 0);
+		System.out.println(list);
+		int count=Collections.frequency(list, 0);
+		System.out.println(count);
+		
+		System.out.println(list.toString());
+		StringBuilder sb=new StringBuilder();
+		for(int i=0;i<list.size();i++){
+			sb.append(list.get(i));
+		}
+		System.out.println(sb.toString());
+	}
+	
+	@Test
+	public void testStringBuilder(){
+		String str="1234567894390";
+		StringBuilder sb=new StringBuilder(str);
+		for(int i=sb.length()-3;i>0;i-=3){
+			sb.insert(i, ",");
+		}
+		System.out.println(sb.toString());
+	}
 }

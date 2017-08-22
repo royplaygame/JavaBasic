@@ -1,8 +1,6 @@
 package com.hy.ly.oop;
 
 import java.io.UnsupportedEncodingException;
-import java.nio.charset.Charset;
-import java.util.Locale;
 
 public class TestEnum {
 

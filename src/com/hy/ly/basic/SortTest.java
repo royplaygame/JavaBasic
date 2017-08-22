@@ -97,6 +97,97 @@ public class SortTest {
 
 	@Test
 	public void testGet() {
-		System.out.println(this.getClass().getName());
+		int num[] = { 1, 25, 56, 35, 22, 9, 8, 2, 4 };
+		// 冒泡排序
+		for (int i = 0; i < num.length - 1; i++) {
+			for (int j = 0; j < num.length - i - 1; j++) {
+				if (num[j] > num[j + 1]) {
+					int temp = num[j];
+					num[j] = num[j + 1];
+					num[j + 1] = temp;
+				}
+			}
+		}
+		for (int k : num) {
+			System.out.print(k + " ");
+		}
+	}
+
+	@Test
+	public void testSort3() {
+		int num[] = { 1, 25, 56, 35, 22, 9, 8, 2, 4 };
+		// 选择排序
+		for (int i = 0; i < num.length; i++) {
+			int k = i;
+			// 找到一个最小的数字的位置
+			for (int j = num.length - 1; j > i; j--) {
+				if (num[j] < num[k]) {
+					k = j;
+				}
+			}
+			int temp = num[i];
+			num[i] = num[k];
+			num[k] = temp;
+		}
+		// 遍历数组
+		for (int i : num) {
+			System.out.print(i + " ");
+		}
+	}
+
+	@Test
+	public void testChangeTowNumber() {
+		int i = 10;
+		int j = 20;
+
+		System.out.println(i + " " + j);
+
+		int temp = i;
+		i = j;
+		j = temp;
+
+		System.out.println(i + " " + j);
+	}
+
+	public void change(int i, int j) {
+		int temp = i;
+		i = j;
+		j = temp;
+	}
+
+	@Test
+	public void testChange() {
+		int i = 10;
+		int j = 20;
+
+		System.out.println(i + " " + j);
+		change(i, j);
+		System.out.println(i + " " + j);
+	}
+
+	@Test
+	public void testChange2() {
+		Data data = new Data(10,20);
+		System.out.println(data.i + " " + data.j);
+		change2(data);
+		System.out.println(data.i + " " + data.j);
+	}
+
+	void change2(Data data) {
+		int temp = data.i;
+		data.i = data.j;
+		data.j = temp;
+	}
+}
+
+class Data {
+	int i;
+	int j;
+	Data(int i,int j){
+		this.i=i;
+		this.j=j;
+	}
+	Data(){
+		
 	}
 }

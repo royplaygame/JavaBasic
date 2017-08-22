@@ -23,7 +23,6 @@ public class ListTest {
 		list.add('d');
 		list.addAll(col);
 		
-		
 		Teacher te=new Teacher("王老师",25);
 		list.add(te);
 		boolean b=list.contains(new Teacher("王老师",25));
@@ -140,5 +139,38 @@ public class ListTest {
 		
 		
 		
+	}
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	@Test
+	public void testArrayList(){
+		ArrayList list=new ArrayList();
+		list.add("kafei");
+		list.add("book");
+		list.add("apple");
+		list.add("orange");
+		list.add("平凡的世界");
+		int count=list.size();
+		/*for(int i=count-1;i>=0;i--){
+			if(list.get(i).equals("book")){
+				list.remove(i);
+			}
+		}*/
+		
+		for(int i=0;i<count;i++){
+			if(list.get(i).equals("book")){
+				list.remove(i);
+				count--;
+			}
+		}
+		
+		Iterator it=list.iterator();
+		while(it.hasNext()){
+			String str=(String) it.next();
+			if(str.equals("apple")){
+				it.remove();
+			}
+		}
+		
+		System.out.println(list);
 	}
 }
