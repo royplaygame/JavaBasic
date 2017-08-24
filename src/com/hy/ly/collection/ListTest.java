@@ -15,53 +15,53 @@ public class ListTest {
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public static void main(String[] args) {
-		List list=new ArrayList();
-		
-		Collection col=Arrays.asList(2,3,5,6);
+		List list = new ArrayList();
+
+		Collection col = Arrays.asList(2, 3, 5, 6);
 		list.add("this");
 		list.add(10);
 		list.add('d');
 		list.addAll(col);
-		
-		Teacher te=new Teacher("王老师",25);
+
+		Teacher te = new Teacher("王老师", 25);
 		list.add(te);
-		boolean b=list.contains(new Teacher("王老师",25));
+		boolean b = list.contains(new Teacher("王老师", 25));
 		System.out.println(b);
-		//遍历集合
-		for(int i=0;i<list.size();i++){
+		// 遍历集合
+		for (int i = 0; i < list.size(); i++) {
 			System.out.println(list.get(i));
 		}
-		//集合迭代器遍历
-		for(Iterator<Object> it=list.iterator();it.hasNext();){
+		// 集合迭代器遍历
+		for (Iterator<Object> it = list.iterator(); it.hasNext();) {
 			System.out.println(it.next());
 		}
-		
-		//集合转化成数组。
-		Object []objs=list.toArray();
-		for(int i=0;i<objs.length;i++){
+
+		// 集合转化成数组。
+		Object[] objs = list.toArray();
+		for (int i = 0; i < objs.length; i++) {
 			System.out.println(objs[i]);
 		}
-		//增强for循环
-		for(Object obj:list){
+		// 增强for循环
+		for (Object obj : list) {
 			System.out.println(obj);
 		}
-		
-		List linkedList=new LinkedList();
+
+		List linkedList = new LinkedList();
 		linkedList.add("ddd");
 		linkedList.add("eee");
 		linkedList.add("fff");
 		linkedList.add("yyy");
-		
-		for(int i=0;i<linkedList.size();i++){
+
+		for (int i = 0; i < linkedList.size(); i++) {
 			System.out.println(linkedList.get(i));
 		}
-		
+
 	}
-	
+
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Test
-	public void ArrayListOperation(){
-		ArrayList list=new ArrayList();
+	public void ArrayListOperation() {
+		ArrayList list = new ArrayList();
 		list.add("kafei");
 		list.add("book");
 		list.add("apple");
@@ -72,19 +72,20 @@ public class ListTest {
 		System.out.println(list.indexOf("平凡的世界"));
 		list.set(1, "monkey");
 		System.out.println(list.toString());
-		Object obj=list.remove(1);
+		Object obj = list.remove(1);
 		System.out.println(list.toString());
 		System.out.println(obj);
 		System.out.println(list.isEmpty());
 		System.out.println(list.contains("apple"));
-		
+
 	}
-	//SuppressWarnings压制警告，即去除警告 
-	//rawtypes是说传参时也要传递带泛型的参数
+
+	// SuppressWarnings压制警告，即去除警告
+	// rawtypes是说传参时也要传递带泛型的参数
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Test
-	public void LinkedListOperation(){
-		LinkedList list=new LinkedList();
+	public void LinkedListOperation() {
+		LinkedList list = new LinkedList();
 		list.add("kafei");
 		list.add("book");
 		list.add("apple");
@@ -105,12 +106,12 @@ public class ListTest {
 		list.offerLast("thisLast");
 		list.offerFirst("thisFirst");
 		System.out.println(list.toString());
-		String peek=(String) list.peek();
+		String peek = (String) list.peek();
 		System.out.println(peek);
-		
-		//pop push
+
+		// pop push
 		System.out.println("===================================");
-		LinkedList list2=new LinkedList();
+		LinkedList list2 = new LinkedList();
 		list2.add("kafei");
 		list2.add("book");
 		list2.add("apple");
@@ -124,53 +125,72 @@ public class ListTest {
 		System.out.println(list2.toString());
 		list2.pop();
 		System.out.println(list2.toString());
-		//set
+		// set
 		list2.set(6, "Modifyto6");
 		System.out.println(list2.toString());
-		
-		//list size
+
+		// list size
 		System.out.println(list2.size());
 		System.out.println(list2.toString());
 		list2.add(null);
 		list2.add(null);
 		System.out.println(list2.size());
 		System.out.println(list2.toString());
-		
-		
-		
-		
+
 	}
+
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Test
-	public void testArrayList(){
-		ArrayList list=new ArrayList();
+	public void testArrayList() {
+		ArrayList list = new ArrayList();
 		list.add("kafei");
 		list.add("book");
 		list.add("apple");
 		list.add("orange");
 		list.add("平凡的世界");
-		int count=list.size();
-		/*for(int i=count-1;i>=0;i--){
-			if(list.get(i).equals("book")){
-				list.remove(i);
-			}
-		}*/
-		
-		for(int i=0;i<count;i++){
-			if(list.get(i).equals("book")){
+		int count = list.size();
+		/*
+		 * for(int i=count-1;i>=0;i--){ if(list.get(i).equals("book")){
+		 * list.remove(i); } }
+		 */
+
+		for (int i = 0; i < count; i++) {
+			if (list.get(i).equals("book")) {
 				list.remove(i);
 				count--;
 			}
 		}
-		
-		Iterator it=list.iterator();
-		while(it.hasNext()){
-			String str=(String) it.next();
-			if(str.equals("apple")){
+
+		Iterator it = list.iterator();
+		while (it.hasNext()) {
+			String str = (String) it.next();
+			if (str.equals("apple")) {
 				it.remove();
 			}
 		}
-		
+
+		System.out.println(list);
+	}
+
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	@Test
+	public void testArrayList2() {
+		ArrayList list = new ArrayList();
+		list.add("kafei");
+		list.add("book");
+		list.add("apple");
+		list.add("orange");
+		list.add("平凡的世界");
+		list.add("apple");
+
+		System.out.println(list);
+		while (true) {
+			if (list.contains("apple")) {
+				list.remove("apple");
+			}else{
+				break;
+			}
+		}
 		System.out.println(list);
 	}
 }
