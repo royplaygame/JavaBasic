@@ -127,4 +127,55 @@ public class TestRandomAccessFile {
 			}
 		}
 	}
+	
+	//read()
+	@Test
+	public void testRandomAccessFile1() throws IOException{
+		File file=new File("hello.txt");
+		RandomAccessFile raf=new RandomAccessFile(file,"rw");
+		int b=raf.read();
+		while(b!=-1){
+			System.out.print((char)b);
+			b=raf.read();
+		}
+		raf.close();
+	}
+	
+	//read(byte[])
+	@Test
+	public void testRandomAccessFile5()throws IOException{
+		RandomAccessFile raf=new RandomAccessFile("hello.txt","rw");
+		byte []b=new byte[100];
+		int len;
+		while((len=raf.read(b))!=-1){
+			String str=new String(b,0,len);
+			System.out.println(str);
+		}
+		raf.close();
+	}
+	
+	@Test
+	public void testRandomAccessFile6()throws IOException{
+		RandomAccessFile raf=new RandomAccessFile("hello.txt","rw");
+		byte[] b=new byte[100];
+		int len;
+		StringBuilder sb=new StringBuilder();
+		while((len=raf.read(b))!=-1){
+			sb.append(new String(b,0,len));
+		}
+		System.out.println(sb.toString());
+		raf.close();
+	}
+	
+	@Test
+	public void testRandomAccessFile7()throws IOException{
+		RandomAccessFile raf=new RandomAccessFile("hello.txt","rw");
+		//找到文件要插入的位置
+		raf.seek(raf.length()+1);
+		String str="请把我写入文件中吧";
+		//向文件中写入数据
+		raf.write(str.getBytes());
+		//关闭流
+		raf.close();
+	}
 }
