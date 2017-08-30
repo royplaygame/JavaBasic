@@ -60,4 +60,6 @@ public class TestBuffered {
 		long end = System.currentTimeMillis();
 		System.out.println(end - start); // 173
 	}
+
+	
 }

@@ -51,7 +51,7 @@ public class TestInputOutputStream {
 
 			fis = new FileInputStream(file);
 
-			// 3. .创建一个FileInputStream类的对象
+			// 3.创建一个FileInputStream类的对象
 			int b;
 			while ((b = fis.read()) != -1) {
 				System.out.print((char) b);
@@ -97,7 +97,7 @@ public class TestInputOutputStream {
 		fis.close();
 	}
 
-	// д���ļ�
+	// 
 	@Test
 	public void testFileOutputStream() {
 
