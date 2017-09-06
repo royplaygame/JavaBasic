@@ -5,8 +5,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
-import java.net.URLConnection;
-
 import org.junit.Test;
 
 /**
@@ -15,7 +13,7 @@ import org.junit.Test;
  * @author ssr
  *
  */
-public class TestURL {
+public class TestURL2 {
 
 	@Test
 	public void testUrl() {
@@ -33,27 +31,17 @@ public class TestURL {
 			System.out.println(url.getPort());
 			System.out.println(url.getPath());
 			System.out.println(url.getFile());
-			System.out.println(url.getRef());
-			System.out.println(url.getQuery());
 
 			// 如何将服务端的资源读取下来 url.openStream()
+			fos = new FileOutputStream(new File("index.jsp"));
 			in = url.openStream();
 			byte[] b = new byte[100];
 			int len;
 			while ((len = in.read(b)) != -1) {
 				String str = new String(b, 0, len);
 				System.out.println(str);
-			}
-
-			// 如果想数据既有输入，又有输出 ; 要用这个url.openConnection()
-			URLConnection urlCon = url.openConnection();
-			in2 = urlCon.getInputStream();
-			fos = new FileOutputStream(new File("index.jsp"));
-			byte[] b2 = new byte[1024];
-			int len2;
-			while ((len2 = in2.read(b2)) != -1) {
-				fos.write(b2, 0, len2);
-			}
+				fos.write(b, 0, len);
+			}	
 
 		} catch (IOException e) {
 			e.printStackTrace();

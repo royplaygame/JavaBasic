@@ -21,6 +21,7 @@ public class TestTCP {
 			socket = new Socket(InetAddress.getByName("localhost"), 9090);
 			out = socket.getOutputStream();
 			out.write("我是客户端！请多关注！".getBytes());
+			//socket.shutdownOutput();
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {
@@ -50,6 +51,7 @@ public class TestTCP {
 		InputStream in = null;
 		try {
 			ss = new ServerSocket(9090);
+			//侦听并接受到此套接字的连接。
 			s = ss.accept();
 			in = s.getInputStream();
 			byte[] b = new byte[100];
