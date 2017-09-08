@@ -71,14 +71,14 @@ public class TestTCP {
 					e.printStackTrace();
 				}
 			}
-			if (in != null) {
+			if (s != null) {
 				try {
 					s.close();
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
 			}
-			if (in != null) {
+			if (ss != null) {
 				try {
 					ss.close();
 				} catch (IOException e) {
