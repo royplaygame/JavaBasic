@@ -20,4 +20,5 @@ public class ThreadTest10 extends Thread{
 			System.out.println(Thread.currentThread().getName()+" "+j);
 		}
 	}
+
 }

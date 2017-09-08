@@ -29,6 +29,8 @@ class Window3 extends Thread {
 						e.printStackTrace();
 					}
 					System.out.println(Thread.currentThread().getName() + "售票窗口。售票号为：" + ticket--);
+				}else{
+					System.exit(0);
 				}
 			} 
 		}
