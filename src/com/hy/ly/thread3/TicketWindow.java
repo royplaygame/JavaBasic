@@ -16,7 +16,8 @@ public class TicketWindow extends Thread {
 					}
 					System.out.println(Thread.currentThread().getName() + "售票窗口。售票号为：" + ticket--);
 				} else {
-					System.exit(0);
+					System.out.println("票已经售罄！");
+					return;
 				}
 			}
 		}
